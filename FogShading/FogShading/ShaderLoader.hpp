@@ -4,7 +4,7 @@
 #include "freeglut.h"
 #include <iostream>
 
-namespace Core
+namespace Shader
 {
 
 	class ShaderLoader

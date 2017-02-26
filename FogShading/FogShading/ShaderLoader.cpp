@@ -3,7 +3,7 @@
 #include <fstream>
 #include <vector>
 
-using namespace Core;
+using namespace Shader;
 
 ShaderLoader::ShaderLoader(void){}
 ShaderLoader::~ShaderLoader(void){}

@@ -8,7 +8,7 @@
 #include <fstream>
 #include <vector>
 
-using namespace Core;
+using namespace Shader;
 
 GLuint program, vertex_shader, fragment_shader;
 GLuint vertex_array_object;
@@ -16,7 +16,7 @@ GLuint vertex_array_object;
 void renderScene(void)
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glClearColor(0.0, 0.0, 0.0, 0.0); //clear red
+	glClearColor(0.0, 0.0, 0.0, 1.0); //clear red
 
 	//use created program
 	glUseProgram(program);
@@ -30,7 +30,7 @@ void renderScene(void)
 void Init()
 {
 	//load and compile shaders
-	Core::ShaderLoader shader_loader = Core::ShaderLoader::ShaderLoader();
+	Shader::ShaderLoader shader_loader = Shader::ShaderLoader::ShaderLoader();
 	program = shader_loader.CreateProgram("Vertex_Shader.glsl", "Fragment_Shader.glsl");
 
 	//generate vertex array
@@ -39,6 +39,8 @@ void Init()
 
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 }
+
+
 
 
 int main(int argc, char**argv)
